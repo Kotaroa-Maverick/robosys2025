@@ -1,0 +1,13 @@
+import random
+
+def generate_lucky_number():
+    
+    #1から9までの整数の中からランダムな数字を生成し、出力する。
+    
+    lucky_number = random.randint(1, 9)
+    
+    # 結果を出力
+    print(f"本日のラッキーナンバーは: {lucky_number} です！")
+
+if __name__ == "__main__":
+    generate_lucky_number()
