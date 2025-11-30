@@ -2,7 +2,7 @@
 #SPDX-FileCopyrightText: 2025 Kota Iwasaki
 #SPDX-License-Identifier:BSD-3-Clause
 
-# PROG="python3 luckynumber"
+PROG="python3 luckynumber"
 
 ng () {
 	echo "${1}行目が違うよ"
