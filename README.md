@@ -13,26 +13,35 @@
 
 # 使い方
 実行方法の例
-'$python3 luckynumber'
+<pre>
+$ python3 luckynumber
+</pre>
 
 実行結果の一例
-
+<pre>
 ラッキーナンバー計算機へようこそ
 あなたの生年月日を8桁で入力してください (例: 19901231): 20051110
 
 入力された生年月日: 20051110
 **あなたのラッキーナンバーは 1 です！**
+</pre>
 
 
 # インストールの手順
 1:gitをインストールしていない場合は、以下のコマンドを入力してください。
-'$sudo apt install git'
+<pre>
+$ sudo apt install git
+</pre>
 
 2:リポジトリをクローンしてください。
-'$git clone https://github.com/Kotaroa-Maverick/robosys2025.git'
+<pre>
+$ git clone https://github.com/Kotaroa-Maverick/robosys2025.git
+</pre>
 
 3:ディレクトリを移動させて、「使い方」にある実行コマンドを入力してください。
-'$cd robosys2025'
+<pre>
+$ cd robosys2025
+</pre>
 
 # 必要なソフトウェア
 -Python(3.7~3.11でテスト済み)
