@@ -14,7 +14,7 @@
 # 使い方
 実行方法の例
 <pre>
-$ python3 luckynumber
+$ ./luckynumber
 </pre>
 
 実行結果の一例
