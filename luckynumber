@@ -6,16 +6,11 @@ import datetime
 
 def calculate_lucky_number(birth_date_str):
     
-    #生年月日（文字列）からラッキーナンバーを計算する。
-    #すべての桁を合計し、結果が1桁になるまで繰り返す。
-    #例: 19901231 -> 1+9+9+0+1+2+3+1 = 26 -> 2+6 = 8
-    
     current_sum = 0
-    # 最初の合計
+
     for digit in birth_date_str:
         current_sum += int(digit)
 
-    # 合計が1桁になるまで繰り返す (1から9のいずれかになる)
     while current_sum > 9:
         next_sum = 0
         for digit in str(current_sum):
@@ -26,45 +21,32 @@ def calculate_lucky_number(birth_date_str):
 
 def get_user_birth_date():
     
-    #ユーザーに生年月日を入力させ、有効な形式か確認する。
-    
     while True:
         try:
-            # ユーザーに入力を促す
-            birth_date_str = input("あなたの生年月日を8桁で入力してください (例: 19901231): ")
+            birth_date_str = input
 
-            # 8桁であることを確認
             if len(birth_date_str) != 8 or not birth_date_str.isdigit():
-                print("⚠️ エラー: 8桁の数字で入力してください。")
+                print("error")
                 continue
 
-            # 日付として有効か確認
             datetime.datetime.strptime(birth_date_str, "%Y%m%d")
 
             return birth_date_str
 
         except ValueError:
-            print("⚠️ エラー: 無効な日付形式です。実在する日付を YYYYMMDD の形式で入力してください。")
+            print("")
         except Exception as e:
-            print(f"予期せぬエラーが発生しました: {e}")
+            print(f"")
 
 
 def generate_lucky_number_from_birthday():
     
-    #生年月日を入力させ、ラッキーナンバーを計算して表示する。
     
-    print("ラッキーナンバー計算機へようこそ")
-    # ユーザーから生年月日を取得
     birth_date = get_user_birth_date()
-
-    # ラッキーナンバーを計算
     lucky_number = calculate_lucky_number(birth_date)
 
-    # 結果を出力
-    print("---------------------------------")
-    print(f"入力された生年月日: {birth_date}")
-    print(f"**あなたのラッキーナンバーは {lucky_number} です！**")
-    print("---------------------------------")
+    print(f" {birth_date} ")
+    print(f" {lucky_number} ")
 
 if __name__ == "__main__":
     generate_lucky_number_from_birthday()
