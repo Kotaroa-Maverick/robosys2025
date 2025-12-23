@@ -2,51 +2,42 @@
 # SPDX-FileCopyrightText: 2025 Kota Iwasaki
 # SPDX-License-Identifier: BSD-3-Clause
 
+import sys
 import datetime
 
 def calculate_lucky_number(birth_date_str):
-    
-    current_sum = 0
 
+    current_sum = 0
     for digit in birth_date_str:
-        current_sum += int(digit)
+        if digit.isdigit():
+            current_sum += int(digit)
 
     while current_sum > 9:
         next_sum = 0
         for digit in str(current_sum):
             next_sum += int(digit)
         current_sum = next_sum
-
     return current_sum
 
-def get_user_birth_date():
-    
-    while True:
-        try:
-            birth_date_str = input
+def main():
 
-            if len(birth_date_str) != 8 or not birth_date_str.isdigit():
-                print("error")
-                continue
+    try:
+        input_data = sys.stdin.read().strip()
+    except EOFError:
+        print("error")
+        sys.exit(1)
 
-            datetime.datetime.strptime(birth_date_str, "%Y%m%d")
+    if not input_data:
+        print("example: echo \"YYYYMMDD\" | ./luckynumber")
+        sys.exit(1)
 
-            return birth_date_str
-
-        except ValueError:
-            print("")
-        except Exception as e:
-            print(f"")
+    extracted_digits = "".join(filter(str.isdigit, input_data))
 
 
-def generate_lucky_number_from_birthday():
-    
-    
-    birth_date = get_user_birth_date()
-    lucky_number = calculate_lucky_number(birth_date)
+    lucky_number = calculate_lucky_number(extracted_digits)
 
-    print(f" {birth_date} ")
-    print(f" {lucky_number} ")
+    print(f"{lucky_number}")
 
 if __name__ == "__main__":
-    generate_lucky_number_from_birthday()
+    main()
+
