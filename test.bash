@@ -2,7 +2,6 @@
 #SPDX-FileCopyrightText: 2025 Kota Iwasaki
 #SPDX-License-Identifier:BSD-3-Clause
 
-
 ng () {
 	echo "${1}行目が違うよ"
 	res=1
@@ -10,8 +9,8 @@ ng () {
 
 res=0
 
-out=$(echo "5" | ./luckynumber)
-[ "${out}" = 15 ] || ng "$LINENO"
+out=$(seq "21120903" | ./luckynumber)
+[ "${out}" = ] || ng "$LINENO"
 
 out=$(echo "あ" | ./luckynumber)
 [ "$?" = 1 ]      || ng "$LINENO"
