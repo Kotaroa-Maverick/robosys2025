@@ -27,10 +27,6 @@ def main():
         print("error")
         sys.exit(1)
 
-    if not input_data:
-        print("example: echo \"YYYYMMDD\" | ./luckynumber")
-        sys.exit(1)
-
     extracted_digits = "".join(filter(str.isdigit, input_data))
 
 
