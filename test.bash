@@ -10,15 +10,18 @@ ng () {
 res=0
 
 out=$(seq "21120903" | ./luckynumber)
-[ "${out}" = ] || ng "$LINENO"
+[ "${out}" = 9] || ng "$LINENO"
 
 out=$(echo "あ" | ./luckynumber)
 [ "$?" = 1 ]      || ng "$LINENO"
-[ "${out}" = "" ] || ng "$LINENO"
+[ "${out}" = "0" ] || ng "$LINENO"
 
-out=$(echo | ./luckynumber)
+out=$(echo "" | ./luckynumber)
 [ "$?" = 1 ]      || ng "$LINENO"
-[ "${out}" = "" ] || ng "$LINENO"
+[ "${out}" = "0" ] || ng "$LINENO"
+
+out=$(echo "9999" | ./luckynumber)
+[ "${out}" = "9" ] || ng "$LINENO"
 
 [ "${res}" = 0 ] && echo "OK"
 exit $res
